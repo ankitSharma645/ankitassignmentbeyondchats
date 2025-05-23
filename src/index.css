@@ -1,13 +1,2295 @@
+/* Modern AI Chat Interface Styling - Fixed Version */
+
+/* CSS Variables - Enhanced Color Scheme for AI Copilot */
+:root {
+  /* Base Colors - Vibrant Gradient Theme */
+  --primary-color: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-dark: #3730a3;
+  --secondary-color: #0ea5e9;
+  --accent-color: #06b6d4;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+
+  /* Neutral Colors - Enhanced for Light Mode */
+  --background-color: #ffffff;
+  --foreground-color: #0f172a;
+  --card-color: #ffffff;
+  --card-foreground-color: #0f172a;
+  --muted-color: #f8fafc;
+  --muted-foreground-color: #64748b;
+  --border-color: #e2e8f0;
+
+  /* Chat Bubble Colors - Enhanced for Light Mode */
+  --ai-message-bg: #f0f9ff;
+  --ai-message-text: #1e293b;
+  --ai-message-border: rgba(14, 165, 233, 0.2);
+  --user-message-bg: #4f46e5;
+  --user-message-text: #ffffff;
+  --user-message-border: #3730a3;
+  --follow-up-message-bg: #dbeafe;
+  --follow-up-message-text: #1e40af;
+
+  /* UI Elements - Enhanced for Light Mode */
+  --button-bg: #f1f5f9;
+  --button-text: #334155;
+  --button-hover-bg: #e2e8f0;
+  --button-active-bg: #cbd5e1;
+  --input-bg: #ffffff;
+  --input-border: #e2e8f0;
+  --input-focus-border: #4f46e5;
+  --input-focus-ring: rgba(79, 70, 229, 0.2);
+
+  /* Header and Navigation Colors - Fixed for Light Mode */
+  --header-bg: #ffffff;
+  --header-text: #0f172a;
+  --nav-bg: #f8fafc;
+  --nav-text: #0f172a;
+  --nav-hover-bg: #f1f5f9;
+  --nav-active-bg: #e2e8f0;
+  --nav-border: #e2e8f0;
+
+  /* Settings and Notes Colors - Fixed for Light Mode */
+  --settings-bg: #141313;
+  --settings-text: #0f172a;
+  --settings-hover-bg: #f1f5f9;
+  --settings-border: #e2e8f0;
+  --notes-bg: #ffffff;
+  --notes-text: #0f172a;
+  --notes-border: #e2e8f0;
+  --notes-icon: #334155;
+  --notes-icon-hover: #4f46e5;
+
+  /* Modal and Overlay Colors - Fixed for Light Mode */
+  --modal-bg: #fff8f8;
+  --modal-backdrop: rgba(0, 0, 0, 0.85);
+  --overlay-bg: #000000;
+  --dialog-bg: #f9f9f9;
+  --dialog-border: #e2e8f0;
+  --dialog-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Dropdown Menu Colors - Fixed for Light Mode */
+  --dropdown-bg: #ffffff;
+  --dropdown-text: #0f172a;
+  --dropdown-hover-bg: #f1f5f9;
+  --dropdown-border: #e2e8f0;
+  --dropdown-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-outline: 0 0 0 3px rgba(79, 70, 229, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Dark Theme - Enhanced */
+.dark {
+  /* Base Colors - Enhanced for Dark Mode */
+  --primary-color: #818cf8;
+  --primary-light: #a5b4fc;
+  --primary-dark: #4f46e5;
+  --secondary-color: #38bdf8;
+  --accent-color: #22d3ee;
+
+  /* Neutral Colors - Enhanced for Dark Mode */
+  --background-color: #0f172a;
+  --foreground-color: #f8fafc;
+  --card-color: #1e293b;
+  --card-foreground-color: #f8fafc;
+  --muted-color: #1e293b;
+  --muted-foreground-color: #94a3b8;
+  --border-color: #334155;
+
+  /* Chat Bubble Colors - Enhanced for Dark Mode */
+  --ai-message-bg: #1e293b;
+  --ai-message-text: #f1f5f9;
+  --ai-message-border: rgba(56, 189, 248, 0.3);
+  --user-message-bg: #4f46e5;
+  --user-message-text: #ffffff;
+  --user-message-border: #6366f1;
+  --follow-up-message-bg: #1e40af;
+  --follow-up-message-text: #dbeafe;
+
+  /* UI Elements - Enhanced for Dark Mode */
+  --button-bg: #334155;
+  --button-text: #f1f5f9;
+  --button-hover-bg: #475569;
+  --button-active-bg: #64748b;
+  --input-bg: #1e293b;
+  --input-border: #334155;
+  --input-focus-border: #818cf8;
+  --input-focus-ring: rgba(129, 140, 248, 0.2);
+
+  /* Header and Navigation Colors - Fixed for Dark Mode */
+  --header-bg: #0f172a;
+  --header-text: #f8fafc;
+  --nav-bg: #1e293b;
+  --nav-text: #f8fafc;
+  --nav-hover-bg: #334155;
+  --nav-active-bg: #475569;
+  --nav-border: #334155;
+
+  /* Settings and Notes Colors - Fixed for Dark Mode */
+  --settings-bg: #1e293b;
+  --settings-text: #f8fafc;
+  --settings-hover-bg: #334155;
+  --settings-border: #334155;
+  --notes-bg: #1e293b;
+  --notes-text: #f8fafc;
+  --notes-border: #334155;
+  --notes-icon: #f1f5f9;
+  --notes-icon-hover: #a5b4fc;
+
+  /* Modal and Overlay Colors - Fixed for Dark Mode */
+  --modal-bg: #1e293b;
+  --modal-backdrop: rgba(0, 0, 0, 0.85);
+  --overlay-bg: #1e293b;
+  --dialog-bg: #1e293b;
+  --dialog-border: #334155;
+  --dialog-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  /* Dropdown Menu Colors - Fixed for Dark Mode */
+  --dropdown-bg: #1e293b;
+  --dropdown-text: #f8fafc;
+  --dropdown-hover-bg: #334155;
+  --dropdown-border: #334155;
+  --dropdown-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Base Styles - Enhanced */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Enhanced Light Mode Background Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(var(--primary-light) 1px, transparent 1px),
+    radial-gradient(var(--secondary-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity var(--transition-normal);
+}
+
+.dark body::before {
+  opacity: 0.05;
+  background-image: 
+    radial-gradient(var(--primary-light) 1px, transparent 1px),
+    radial-gradient(var(--secondary-color) 1px, transparent 1px);
+}
+
+/* ===== CRITICAL FIXES FOR MODALS AND DIALOGS ===== */
+
+/* Fix for dialog component - make backdrop solid black in both modes */
+.fixed.inset-0.z-50.flex.items-center.justify-center.bg-black\/50,
+div[role="dialog"],
+[data-state="open"][role="dialog"],
+.dialog-content,
+.modal-content,
+.fixed.inset-0.z-50 {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: none !important;
+}
+
+/* Fix for dialog inner content */
+.fixed.inset-0.z-50.flex.items-center.justify-center.bg-black\/50 > div,
+div[role="dialog"] > div,
+.dialog-content > div,
+.modal-content > div {
+  background-color: var(--dialog-bg) !important;
+  border: 1px solid var(--dialog-border) !important;
+  box-shadow: var(--dialog-shadow) !important;
+}
+
+/* Fix for dropdown menus */
+[role="menu"],
+.dropdown-menu,
+.popover-content,
+.absolute.z-10.mt-2.min-w-\[10rem\].rounded-md.bg-background.border.shadow-lg {
+  background-color: var(--dropdown-bg) !important;
+  border: 1px solid var(--dropdown-border) !important;
+  box-shadow: var(--dropdown-shadow) !important;
+  z-index: 100 !important;
+}
+
+/* Fix for dropdown menu items */
+[role="menu"] button,
+.dropdown-item,
+div[role="menuitem"],
+.px-4.py-2.text-sm.hover\:bg-accent.hover\:text-accent-foreground.cursor-pointer {
+  background-color: transparent !important;
+  color: var(--dropdown-text) !important;
+}
+
+[role="menu"] button:hover,
+.dropdown-item:hover,
+div[role="menuitem"]:hover,
+.px-4.py-2.text-sm.hover\:bg-accent.hover\:text-accent-foreground.cursor-pointer:hover {
+  background-color: var(--dropdown-hover-bg) !important;
+}
+
+/* Fix for dropdown menu separators */
+[role="menu"] hr,
+.dropdown-separator,
+.h-px.my-1.bg-border {
+  border-color: var(--dropdown-border) !important;
+}
+
+/* Fix for dropdown menu headers */
+[role="menu"] h3,
+.dropdown-header,
+.px-4.py-2.text-xs.font-medium.text-muted-foreground {
+  color: var(--dropdown-text) !important;
+}
+
+/* ===== NOTES PANEL SPECIFIC FIXES ===== */
+
+/* Fix for notes action buttons visibility on desktop */
+.notes-panel .flex.gap-1 button,
+.bg-muted\/50 .flex.gap-1 button,
+div[role="dialog"] .flex.gap-1 button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 4px !important;
+  margin: 0 !important;
+}
+
+/* Desktop specific styling for notes action buttons */
+@media (min-width: 768px) {
+  .notes-panel .flex.gap-1 button,
+  .bg-muted\/50 .flex.gap-1 button,
+  div[role="dialog"] .flex.gap-1 button {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    background-color: var(--button-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    padding: 6px !important;
+  }
+
+  .notes-panel .flex.gap-1 button:hover,
+  .bg-muted\/50 .flex.gap-1 button:hover,
+  div[role="dialog"] .flex.gap-1 button:hover {
+    background-color: var(--button-hover-bg) !important;
+    border-color: var(--primary-light) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+}
+
+/* Fix for notes action button icons */
+.notes-panel .flex.gap-1 button svg,
+.bg-muted\/50 .flex.gap-1 button svg,
+div[role="dialog"] .flex.gap-1 button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+}
+
+/* Desktop specific icon sizing */
+@media (min-width: 768px) {
+  .notes-panel .flex.gap-1 button svg,
+  .bg-muted\/50 .flex.gap-1 button svg,
+  div[role="dialog"] .flex.gap-1 button svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+  }
+}
+
+/* Fix for delete button specifically */
+.notes-panel .flex.gap-1 button.text-destructive,
+.bg-muted\/50 .flex.gap-1 button.text-destructive,
+div[role="dialog"] .flex.gap-1 button.text-destructive {
+  color: var(--danger-color) !important;
+}
+
+.notes-panel .flex.gap-1 button.text-destructive svg,
+.bg-muted\/50 .flex.gap-1 button.text-destructive svg,
+div[role="dialog"] .flex.gap-1 button.text-destructive svg {
+  color: var(--danger-color) !important;
+  stroke: var(--danger-color) !important;
+}
+
+.notes-panel .flex.gap-1 button.text-destructive:hover,
+.bg-muted\/50 .flex.gap-1 button.text-destructive:hover,
+div[role="dialog"] .flex.gap-1 button.text-destructive:hover {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  border-color: var(--danger-color) !important;
+}
+
+/* Fix for notes panel header */
+.notes-panel .flex.items-center.justify-between,
+div[role="dialog"] .flex.items-center.justify-between {
+  background-color: var(--notes-bg) !important;
+  border-bottom: 1px solid var(--notes-border) !important;
+  padding: 12px 16px !important;
+}
+
+.notes-panel h2,
+div[role="dialog"] h2 {
+  color: var(--notes-text) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Fix for notes panel close button */
+.notes-panel .flex.items-center.justify-between button,
+div[role="dialog"] .flex.items-center.justify-between button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.notes-panel .flex.items-center.justify-between button:hover,
+div[role="dialog"] .flex.items-center.justify-between button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+/* Fix for notes content area */
+.notes-panel .flex-1.overflow-auto,
+div[role="dialog"] .flex-1.overflow-auto {
+  background-color: var(--notes-bg) !important;
+  color: var(--notes-text) !important;
+}
+
+/* Fix for individual note items */
+.notes-panel .bg-muted\/50,
+div[role="dialog"] .bg-muted\/50 {
+  background-color: var(--muted-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+}
+
+.dark .notes-panel .bg-muted\/50,
+.dark div[role="dialog"] .bg-muted\/50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix for note timestamps */
+.notes-panel .text-muted-foreground,
+div[role="dialog"] .text-muted-foreground {
+  color: var(--muted-foreground-color) !important;
+}
+
+/* Fix for note content text */
+.notes-panel .text-sm,
+div[role="dialog"] .text-sm {
+  color: var(--notes-text) !important;
+}
+
+/* Fix for textarea in notes */
+.notes-panel textarea,
+div[role="dialog"] textarea {
+  background-color: var(--input-bg) !important;
+  color: var(--foreground-color) !important;
+  border: 1px solid var(--input-border) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.notes-panel textarea:focus,
+div[role="dialog"] textarea:focus {
+  border-color: var(--input-focus-border) !important;
+  box-shadow: 0 0 0 2px var(--input-focus-ring) !important;
+  outline: none !important;
+}
+
+/* Fix for Add Note button */
+.notes-panel button[variant="outline"],
+div[role="dialog"] button[variant="outline"] {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.notes-panel button[variant="outline"]:hover,
+div[role="dialog"] button[variant="outline"]:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+/* Chat Bubble Styling - Enhanced */
+.motion-div {
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+/* AI Message Styling - Enhanced for Light Mode */
+.justify-start .max-w-3xl {
+  background-color: var(--ai-message-bg);
+  color: var(--ai-message-text);
+  border: 1px solid var(--ai-message-border);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  transform-origin: top left;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.justify-start .max-w-3xl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.justify-start .max-w-3xl:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.justify-start .max-w-3xl:hover::before {
+  opacity: 0.7;
+}
+
+/* User Message Styling - Enhanced */
+.justify-end .max-w-3xl {
+  background-color: var(--user-message-bg);
+  color: var(--user-message-text);
+  border: 1px solid var(--user-message-border);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  transform-origin: top right;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.justify-end .max-w-3xl::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+}
+
+.justify-end .max-w-3xl:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Follow-up Message Styling - Enhanced */
+.message.isFollowUp {
+  background-color: var(--follow-up-message-bg);
+  color: var(--follow-up-message-text);
+  border: 1px solid transparent;
+  transition: transform var(--transition-bounce);
+  border-radius: var(--radius-md);
+}
+
+.message.isFollowUp:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Button Styling - Enhanced for Light Mode */
+button {
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(79, 70, 229, 0.3);
+  opacity: 0;
+  border-radius: var(--radius-full);
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  background-color: var(--button-active-bg);
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+button:active::after {
+  opacity: 0.3;
+  transform: scale(100, 100) translate(-50%, -50%);
+  transition: transform var(--transition-normal), opacity var(--transition-fast);
+}
+
+/* Chat Action Buttons - Enhanced for Light Mode */
+.mt-2.md\:mt-3.flex.flex-wrap.gap-1.md\:gap-2 button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-bounce);
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--border-color);
+}
+
+.mt-2.md\:mt-3.flex.flex-wrap.gap-1.md\:gap-2 button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--transition-normal);
+  border-radius: inherit;
+}
+
+.mt-2.md\:mt-3.flex.flex-wrap.gap-1.md\:gap-2 button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.mt-2.md\:mt-3.flex.flex-wrap.gap-1.md\:gap-2 button:hover::before {
+  opacity: 0.1;
+}
+
+.mt-2.md\:mt-3.flex.flex-wrap.gap-1.md\:gap-2 button:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+@keyframes messageEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  70% {
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--primary-color), 0 0 20px var(--secondary-color);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes particleAnimation {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x, 100px), var(--y, -100px)) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes typing-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Apply animations to elements */
+.justify-start .max-w-3xl {
+  animation: messageEntrance 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.justify-end .max-w-3xl {
+  animation: messageEntrance 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Typing indicator animation - Enhanced */
+.typing-indicator {
+  display: inline-block;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.typing-indicator::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0.25rem;
+  animation: typing 1.5s infinite;
+}
+
+/* Shimmer effect for loading states - Enhanced */
+.shimmer {
+  background: linear-gradient(
+    90deg, 
+    var(--ai-message-bg) 0%, 
+    var(--button-hover-bg) 50%, 
+    var(--ai-message-bg) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* Hover effects for interactive elements - Enhanced */
+.hover-lift {
+  transition: transform var(--transition-fast);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Message timestamp styling - Enhanced */
+.text-xs.opacity-75 {
+  color: var(--muted-foreground-color);
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+  font-size: 0.75rem;
+}
+
+.max-w-3xl:hover .text-xs.opacity-75 {
+  opacity: 1;
+}
+
+/* Read more button styling - Enhanced */
+button.text-xs.mt-2.hover\:underline {
+  color: var(--primary-color);
+  transition: all var(--transition-fast);
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  box-shadow: none;
+}
+
+button.text-xs.mt-2.hover\:underline:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+  background: transparent;
+  transform: none;
+}
+
+/* Sources styling - Enhanced */
+.mt-2.text-xs.opacity-75 {
+  color: var(--muted-foreground-color);
+  opacity: 0.75;
+  transition: all var(--transition-fast);
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  background-color: var(--muted-color);
+  font-size: 0.75rem;
+}
+
+.dark .mt-2.text-xs.opacity-75 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling - Enhanced */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  transition: width var(--transition-fast);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  transition: background-color var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 3px;
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.7);
+}
+
+/* Chat input styling - Enhanced for Light Mode */
+.p-2.md\:p-4.border-t.bg-background.relative textarea {
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--input-bg);
+  color: var(--foreground-color);
+  padding: 0.75rem;
+  resize: none;
+}
+
+.p-2.md\:p-4.border-t.bg-background.relative textarea:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--input-focus-ring);
+  outline: none;
+}
+
+.p-2.md\:p-4.border-t.bg-background.relative textarea:focus {
+  animation: borderGlow 2s infinite;
+}
+
+/* Personality avatar styling - Enhanced */
+.font-semibold.flex.items-center.gap-1 .text-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  color: var(--background-color);
+  border-radius: var(--radius-full);
+  margin-right: 4px;
+  transition: all var(--transition-normal);
+  transform-origin: center;
+}
+
+.max-w-3xl:hover .font-semibold.flex.items-center.gap-1 .text-lg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Listen button animation - Enhanced */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* WOW Factor: Floating animation for search indicator - Enhanced */
+.search-indicator {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* WOW Factor: Glow effect for active elements - Enhanced */
+.active-element {
+  position: relative;
+}
+
+.active-element::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(8px);
+  animation: pulse 2s infinite;
+}
+
+/* WOW Factor: Animated gradient border for focused elements - Enhanced */
+.focus-border {
+  position: relative;
+}
+
+.focus-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+  border-radius: calc(var(--radius-md) + 2px);
+  z-index: -1;
+}
+
+/* WOW Factor: Particle effect for user actions - Enhanced */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  pointer-events: none;
+  animation: particleAnimation 1s forwards;
+}
+
+/* WOW Factor: Typing animation for AI responses - Enhanced */
+.typing-animation {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing-text 2s steps(40, end) forwards;
+}
+
+/* WOW Factor: 3D tilt effect on hover - Enhanced */
+.tilt-effect {
+  transition: transform var(--transition-normal);
+  transform-style: preserve-3d;
+}
+
+.tilt-effect:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+}
+
+/* WOW Factor: Ripple effect for buttons - Enhanced */
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* WOW Factor: Animated underline for links - Enhanced */
+.animated-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* WOW Factor: Glowing text effect - Enhanced */
+.glow-text {
+  text-shadow: 0 0 5px var(--primary-light), 0 0 10px var(--primary-light);
+  animation: pulse 2s infinite;
+}
+
+/* WOW Factor: Animated gradient background - Enhanced */
+.gradient-bg {
+  background: linear-gradient(
+    -45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-dark)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* WOW Factor: Elastic bounce for interactive elements - Enhanced */
+.elastic-bounce {
+  transition: transform var(--transition-bounce);
+}
+
+.elastic-bounce:hover {
+  transform: scale(1.05);
+}
+
+.elastic-bounce:active {
+  transform: scale(0.95);
+}
+
+/* Enhanced Light Mode Specific Improvements */
+.light-mode-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.light-mode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light);
+}
+
+/* Enhanced Light Mode Button Styling */
+.light-mode-button {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.light-mode-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+.light-mode-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-light);
+}
+
+.light-mode-button:hover::before {
+  opacity: 0.1;
+}
+
+.light-mode-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced Light Mode Input Styling */
+.light-mode-input {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.light-mode-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+/* Enhanced Light Mode Badge Styling */
+.light-mode-badge {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.light-mode-badge:hover {
+  background-color: #e2e8f0;
+  transform: scale(1.05);
+}
+
+/* Enhanced Light Mode Avatar Styling */
+.light-mode-avatar {
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.light-mode-avatar:hover {
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Enhanced Light Mode Tooltip Styling */
+.light-mode-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.light-mode-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.light-mode-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.light-mode-tooltip:hover::before,
+.light-mode-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Enhanced Light Mode Notification Styling */
+.light-mode-notification {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.light-mode-notification::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.light-mode-notification:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SPECIFIC FIXES FOR REPORTED ISSUES ===== */
+
+/* Fix for settings button in light mode */
+button[aria-label="Settings"],
+.settings-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+  z-index: 10;
+}
+
+button[aria-label="Settings"]:hover,
+.settings-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+button[aria-label="Settings"] svg,
+.settings-button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+}
+
+/* Fix for appearance dropdown menu in light mode */
+div[role="menu"],
+.appearance-dropdown {
+  background-color: var(--dropdown-bg) !important;
+  border: 1px solid var(--dropdown-border) !important;
+  box-shadow: var(--dropdown-shadow) !important;
+  z-index: 50 !important;
+}
+
+div[role="menu"] button,
+.appearance-dropdown button {
+  color: var(--dropdown-text) !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+div[role="menu"] button:hover,
+.appearance-dropdown button:hover {
+  background-color: var(--dropdown-hover-bg) !important;
+  transform: none !important;
+}
+
+div[role="menu"] button svg,
+.appearance-dropdown button svg {
+  color: var(--dropdown-text) !important;
+  stroke: var(--dropdown-text) !important;
+}
+
+/* Fix for notes button visibility in both modes */
+button[aria-label="Show Notes"],
+button[aria-label="Hide Notes"],
+.notes-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 10px !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  z-index: 50 !important;
+  margin: 0 !important;
+}
+
+button[aria-label="Show Notes"]:hover,
+button[aria-label="Hide Notes"]:hover,
+.notes-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+button[aria-label="Show Notes"] svg,
+button[aria-label="Hide Notes"] svg,
+.notes-button svg {
+  color: var(--notes-icon) !important;
+  stroke: var(--notes-icon) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+button[aria-label="Show Notes"]:hover svg,
+button[aria-label="Hide Notes"]:hover svg,
+.notes-button:hover svg {
+  color: var(--notes-icon-hover) !important;
+  stroke: var(--notes-icon-hover) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Fix for header text in light mode */
+h1, h2, h3, 
+.header-text,
+.conversation-title {
+  color: var(--foreground-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Fix for "Conversations" and "AI Copilot" text in header */
+.nav-header,
+.brand-text,
+.sidebar-header,
+.navbar h1 {
+  color: var(--foreground-color) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Fix for "New Conversation" text in light mode */
+.conversation-header,
+.page-title {
+  color: var(--foreground-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Fix for "Your assistant for customer support" text */
+.assistant-description,
+.subtitle-text {
+  color: var(--muted-foreground-color) !important;
+}
+
+/* Fix for theme selector buttons */
+button[aria-label="Light"],
+button[aria-label="Dark"],
+button[aria-label="System"],
+.theme-button {
+  background-color: transparent !important;
+  color: var(--dropdown-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+button[aria-label="Light"]:hover,
+button[aria-label="Dark"]:hover,
+button[aria-label="System"]:hover,
+.theme-button:hover {
+  background-color: var(--dropdown-hover-bg) !important;
+}
+
+button[aria-label="Light"] svg,
+button[aria-label="Dark"] svg,
+button[aria-label="System"] svg,
+.theme-button svg {
+  color: var(--dropdown-text) !important;
+  stroke: var(--dropdown-text) !important;
+}
+
+/* Fix for color theme buttons */
+button[aria-label="Blue"],
+button[aria-label="Purple"],
+button[aria-label="Green"],
+button[aria-label="Neon"],
+button[aria-label="Sunset"],
+button[aria-label="Ocean"],
+.color-theme-button {
+  background-color: transparent !important;
+  color: var(--dropdown-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+button[aria-label="Blue"]:hover,
+button[aria-label="Purple"]:hover,
+button[aria-label="Green"]:hover,
+button[aria-label="Neon"]:hover,
+button[aria-label="Sunset"]:hover,
+button[aria-label="Ocean"]:hover,
+.color-theme-button:hover {
+  background-color: var(--dropdown-hover-bg) !important;
+}
+
+/* Fix for "Saved Notes" text */
+.saved-notes-title,
+.panel-title {
+  color: var(--notes-text) !important;
+  font-weight: 600 !important;
+}
+
+/* Fix for "Appearance" text */
+.appearance-title,
+.dropdown-title {
+  color: var(--dropdown-text) !important;
+  font-weight: 600 !important;
+}
+
+/* Fix for AI Personality and Magic Prompts buttons */
+button[aria-label="AI Personality"],
+button[aria-label="Magic Prompts"],
+.feature-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+button[aria-label="AI Personality"]:hover,
+button[aria-label="Magic Prompts"]:hover,
+.feature-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+button[aria-label="AI Personality"] svg,
+button[aria-label="Magic Prompts"] svg,
+.feature-button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+}
+
+/* Fix for "New Chat" button */
+button[aria-label="New Chat"],
+.new-chat-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+button[aria-label="New Chat"]:hover,
+.new-chat-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+button[aria-label="New Chat"] svg,
+.new-chat-button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+}
+
+/* Fix for "Starred" button */
+button[aria-label="Starred"],
+.starred-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+button[aria-label="Starred"]:hover,
+.starred-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+}
+
+button[aria-label="Starred"] svg,
+.starred-button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+}
+
+/* Fix for file upload and mic icons */
+button[aria-label="Upload file"],
+button[aria-label="Start recording"],
+button[aria-label="Stop recording"],
+.file-upload-button,
+.mic-button {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1px solid var(--border-color) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 10px !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease !important;
+  margin: 0 4px !important;
+}
+
+button[aria-label="Upload file"]:hover,
+button[aria-label="Start recording"]:hover,
+button[aria-label="Stop recording"]:hover,
+.file-upload-button:hover,
+.mic-button:hover {
+  background-color: var(--button-hover-bg) !important;
+  border-color: var(--primary-light) !important;
+  transform: translateY(-2px) !important;
+}
+
+button[aria-label="Upload file"] svg,
+button[aria-label="Start recording"] svg,
+button[aria-label="Stop recording"] svg,
+.file-upload-button svg,
+.mic-button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+button[aria-label="Upload file"]:hover svg,
+button[aria-label="Start recording"]:hover svg,
+button[aria-label="Stop recording"]:hover svg,
+.file-upload-button:hover svg,
+.mic-button:hover svg {
+  color: var(--primary-color) !important;
+  stroke: var(--primary-color) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Fix for chat input container */
+.chat-input-container,
+.p-2.md\:p-4.border-t.bg-background.relative {
+  background-color: var(--background-color) !important;
+  border-top: 1px solid var(--border-color) !important;
+  padding: 0.75rem !important;
+}
+
+/* Fix for chat input icons container */
+.chat-input-icons,
+.flex.items-center.gap-2 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Fix for send button */
+button[aria-label="Send message"],
+.send-button {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 10px !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease !important;
+  margin: 0 4px !important;
+}
+
+button[aria-label="Send message"]:hover,
+.send-button:hover {
+  background-color: var(--primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+button[aria-label="Send message"] svg,
+.send-button svg {
+  color: white !important;
+  stroke: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+/* Fix for navbar in light mode */
+.navbar {
+  background-color: var(--header-bg) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+}
+
+/* Fix for sidebar in light mode */
+.sidebar {
+  background-color: var(--background-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+/* Fix for dropdown menu items */
+.dropdown-item,
+div[role="menuitem"] {
+  color: var(--dropdown-text) !important;
+  background-color: transparent !important;
+}
+
+.dropdown-item:hover,
+div[role="menuitem"]:hover {
+  background-color: var(--dropdown-hover-bg) !important;
+}
+
+/* Fix for dropdown menu separators */
+.dropdown-separator,
+hr {
+  border-color: var(--dropdown-border) !important;
+}
+
+/* Fix for dropdown menu headers */
+.dropdown-header,
+div[role="menu"] h3 {
+  color: var(--dropdown-text) !important;
+}
+
+/* Fix for chat message timestamps */
+.message-timestamp,
+.text-xs.text-muted-foreground {
+  color: var(--muted-foreground-color) !important;
+}
+
+/* Fix for chat message sender names */
+.message-sender,
+.font-semibold {
+  color: var(--foreground-color) !important;
+}
+
+/* Fix for chat message content */
+.message-content,
+.whitespace-pre-wrap {
+  color: var(--foreground-color) !important;
+}
+
+/* Fix for chat message actions */
+.message-actions,
+.flex.items-center.gap-1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for chat message action buttons */
+.message-action-button,
+.flex.items-center.gap-1 button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for chat message action button icons */
+.message-action-icon,
+.flex.items-center.gap-1 button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for chat container */
+.chat-container,
+.flex-1.overflow-auto {
+  background-color: var(--background-color) !important;
+  height: calc(100vh - 16rem) !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Fix for chat messages */
+.chat-message,
+.flex.flex-col.gap-4 {
+  background-color: transparent !important;
+}
+
+/* Fix for chat message bubbles */
+.chat-bubble,
+.max-w-3xl {
+  background-color: var(--ai-message-bg) !important;
+  color: var(--ai-message-text) !important;
+  border: 1px solid var(--ai-message-border) !important;
+}
+
+/* Fix for user chat message bubbles */
+.user-chat-bubble,
+.justify-end .max-w-3xl {
+  background-color: var(--user-message-bg) !important;
+  color: var(--user-message-text) !important;
+  border: 1px solid var(--user-message-border) !important;
+}
+
+/* Fix for chat message bubble content */
+.chat-bubble-content,
+.max-w-3xl .p-4 {
+  color: inherit !important;
+}
+
+/* Fix for chat message bubble actions */
+.chat-bubble-actions,
+.max-w-3xl .flex.items-center.gap-1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for chat message bubble action buttons */
+.chat-bubble-action-button,
+.max-w-3xl .flex.items-center.gap-1 button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for chat message bubble action button icons */
+.chat-bubble-action-icon,
+.max-w-3xl .flex.items-center.gap-1 button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for sidebar conversation list */
+.sidebar-conversation-list,
+.h-full.overflow-y-auto {
+  background-color: var(--background-color) !important;
+}
+
+/* Fix for sidebar conversation items */
+.sidebar-conversation-item,
+.px-4.py-2.border-l-2 {
+  border-color: transparent !important;
+}
+
+.sidebar-conversation-item:hover,
+.px-4.py-2.border-l-2:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+.sidebar-conversation-item.active,
+.px-4.py-2.border-l-2.border-primary {
+  border-color: var(--primary-color) !important;
+  background-color: var(--button-hover-bg) !important;
+}
+
+/* Fix for sidebar conversation item titles */
+.sidebar-conversation-title,
+.font-medium.text-sm.truncate {
+  color: var(--foreground-color) !important;
+}
+
+/* Fix for sidebar conversation item previews */
+.sidebar-conversation-preview,
+.text-xs.text-muted-foreground.truncate {
+  color: var(--muted-foreground-color) !important;
+}
+
+/* Fix for sidebar conversation item timestamps */
+.sidebar-conversation-timestamp,
+.text-xs.text-muted-foreground.whitespace-nowrap {
+  color: var(--muted-foreground-color) !important;
+}
+
+/* Fix for sidebar conversation item actions */
+.sidebar-conversation-actions,
+.flex.mt-2.gap-2 {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  transition: none !important;
+}
+
+/* Fix for sidebar conversation item action buttons */
+.sidebar-conversation-action-button,
+.flex.mt-2.gap-2 button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for sidebar conversation item action button icons */
+.sidebar-conversation-action-icon,
+.flex.mt-2.gap-2 button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix for sidebar tabs */
+.sidebar-tabs,
+.flex-shrink-0.flex.border-b {
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix for sidebar tab buttons */
+.sidebar-tab-button,
+.flex-shrink-0.flex.border-b button {
+  background-color: transparent !important;
+  color: var(--button-text) !important;
+}
+
+.sidebar-tab-button:hover,
+.flex-shrink-0.flex.border-b button:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+.sidebar-tab-button.active,
+.flex-shrink-0.flex.border-b button[variant="default"] {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Fix for sidebar tab button icons */
+.sidebar-tab-button-icon,
+.flex-shrink-0.flex.border-b button svg {
+  color: inherit !important;
+  stroke: inherit !important;
+}
+
+/* Fix for sidebar header */
+.sidebar-header,
+.flex-shrink-0.flex.justify-between.items-center.p-4.border-b {
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix for sidebar header title */
+.sidebar-header-title,
+.flex-shrink-0.flex.justify-between.items-center.p-4.border-b h2 {
+  color: var(--foreground-color) !important;
+}
+
+/* Fix for sidebar header button */
+.sidebar-header-button,
+.flex-shrink-0.flex.justify-between.items-center.p-4.border-b button {
+  background-color: transparent !important;
+  color: var(--button-text) !important;
+}
+
+.sidebar-header-button:hover,
+.flex-shrink-0.flex.justify-between.items-center.p-4.border-b button:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+/* Fix for sidebar header button icon */
+.sidebar-header-button-icon,
+.flex-shrink-0.flex.justify-between.items-center.p-4.border-b button svg {
+  color: var(--button-text) !important;
+  stroke: var(--button-text) !important;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Adjust chat bubbles for mobile */
+  .chat-bubble {
+    max-width: 90% !important;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* Make buttons more compact on mobile */
+  .sidebar-action-button {
+    height: 32px !important;
+    width: 32px !important;
+    background-color: var(--button-bg) !important;
+    border-radius: var(--radius-md);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Improve tap targets on mobile */
+  button,
+  [role="button"] {
+    min-height: 36px;
+  }
+
+  /* Adjust font sizes for better readability on mobile */
+  .text-xs {
+    font-size: 0.7rem !important;
+  }
+
+  /* Ensure proper spacing for mobile */
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+
+  /* Improve scrolling on mobile */
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile sidebar specific styles */
+  .mobile-sidebar-open {
+    overflow: hidden;
+  }
+
+  /* Hamburger menu styling */
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  /* Mobile sidebar transition */
+  .mobile-sidebar-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Ensure buttons in chat bubbles are visible and properly sized */
+  .chat-bubble-buttons {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Improve tap targets for mobile buttons */
+  .chat-bubble-buttons button {
+    min-height: 32px !important;
+    min-width: 32px !important;
+    padding: 6px !important;
+  }
+
+  /* Ensure icons are visible */
+  .chat-bubble-buttons button svg {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Adjust file upload and mic buttons for mobile */
+  button[aria-label="Upload file"],
+  button[aria-label="Start recording"],
+  button[aria-label="Stop recording"],
+  .file-upload-button,
+  .mic-button {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+  }
+
+  button[aria-label="Upload file"] svg,
+  button[aria-label="Start recording"] svg,
+  button[aria-label="Stop recording"] svg,
+  .file-upload-button svg,
+  .mic-button svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+  }
+
+  /* Adjust notes button for mobile */
+  button[aria-label="Show Notes"],
+  button[aria-label="Hide Notes"],
+  .notes-button {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+  }
+
+  button[aria-label="Show Notes"] svg,
+  button[aria-label="Hide Notes"] svg,
+  .notes-button svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+  }
+
+  /* Adjust send button for mobile */
+  button[aria-label="Send message"],
+  .send-button {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+  }
+
+  button[aria-label="Send message"] svg,
+  .send-button svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+  }
+
+  /* Mobile notes action buttons */
+  .notes-panel .flex.gap-1 button,
+  .bg-muted\/50 .flex.gap-1 button,
+  div[role="dialog"] .flex.gap-1 button {
+    min-width: 20px !important;
+    min-height: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 2px !important;
+  }
+
+  .notes-panel .flex.gap-1 button svg,
+  .bg-muted\/50 .flex.gap-1 button svg,
+  div[role="dialog"] .flex.gap-1 button svg {
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
+  }
+}
+
+/* Ensure all buttons are visible - Enhanced */
+.conversation-actions,
+.sidebar-action-button,
+.sidebar-action-button svg,
+.chat-bubble-buttons,
+.chat-bubble-buttons button,
+.chat-bubble-buttons button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Replace the existing conversation-actions styling with this more specific version */
+.conversation-actions {
+  opacity: 1 !important; /* Force opacity to be 1 */
+  visibility: visible !important; /* Ensure visibility */
+  display: flex !important; /* Make sure it's displayed */
+  transition: none !important; /* Remove any transitions */
+}
+
+/* Remove any hover effects that might be changing opacity */
+div:hover > .conversation-actions {
+  opacity: 1 !important;
+}
+
+/* Ensure sidebar action buttons are always visible with !important */
+.sidebar-action-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: #e5e7eb !important; /* Light gray for light mode */
+  min-width: 32px !important;
+  min-height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure proper contrast in dark mode */
+.dark .sidebar-action-button {
+  color: #e2e8f0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .sidebar-action-button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force icon visibility in sidebar buttons */
+.sidebar-action-button svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  pointer-events: none !important;
+}
+
+/* Light mode specific icon colors */
+.sidebar-action-button svg {
+  color: #0f0f10 !important; /* Dark gray for light mode */
+  fill: none !important;
+  stroke: #374151 !important;
+}
+
+/* Ensure proper contrast for icons in dark mode */
+.dark .sidebar-action-button svg {
+  color: #e2e8f0 !important;
+  fill: none !important; /* Reset fill to ensure proper icon rendering */
+  stroke: #e2e8f0 !important;
+}
+
+/* Special case for star icon when starred */
+.sidebar-action-button svg.fill-yellow-400 {
+  fill: #facc15 !important;
+  color: #facc15 !important;
+  stroke: #facc15 !important;
+}
+
+/* Ensure delete icon is red */
+.sidebar-action-button.text-destructive svg,
+.sidebar-action-button svg.text-red-500 {
+  color: #ef4444 !important;
+  stroke: #ef4444 !important;
+}
+
+/* Fix for pinned messages container scrolling */
+.pinned-messages-container {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  max-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.pinned-messages-container > div {
+  flex-shrink: 0 !important;
+}
+
+/* Dark mode improvements */
+.dark .bg-background {
+  background-color: #0f1115 !important;
+}
+
+.dark .text-foreground {
+  color: #f8fafc !important;
+}
+
+.dark .border-border {
+  border-color: #046cff !important;
+}
+
+/* Fix chat bubbles in dark mode */
+.dark .bg-gray-100 {
+  background-color: #000000 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #334155 !important;
+}
+
+.dark .bg-primary {
+  background-color: #000000 !important;
+}
+
+.dark .text-primary-foreground {
+  color: #e3d6d6 !important;
+}
+
+/* Ensure proper styling for chat interface in dark mode */
+.dark .bg-muted\/50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* Ensure proper text color in dark mode */
+.dark .text-muted-foreground {
+  color: #94a3b8 !important;
+}
+
+/* Improve focus states for accessibility */
+:focus-visible {
+  outline: 2px solid rgba(65, 56, 249, 0.5);
+  outline-offset: 2px;
+}
+
+/* On mobile, always show conversation actions */
+@media (max-width: 768px) {
+  .conversation-actions {
+    opacity: 1 !important;
+  }
+}
+
+.dark {
+  /* ... other dark mode variables ... */
+  --follow-up-message-bg: rgba(73, 88, 123, 0.5);
+  --follow-up-message-text: #dbeafe;
+}
+/* Follow-up Message Styling - Enhanced */
+.message.isFollowUp {
+  background-color: var(--follow-up-message-bg);
+  color: var(--follow-up-message-text);
+  border: 1px solid transparent;
+  transition: transform var(--transition-bounce);
+  border-radius: var(--radius-md);
+}
+
+.dark .message.isFollowUp {
+  background-color: rgb(10, 21, 50);
+  color: #dbeafe;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.message.isFollowUp:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+/* Fix for follow-up messages in dark mode */
+.dark .bg-blue-100 {
+  background-color: rgb(35, 37, 38) !important;
+}
+
+.dark .text-blue-900 {
+  color: #000000 !important;
+}
+
+.dark .border-blue-200 {
+  border-color: #003cff !important;
 }
