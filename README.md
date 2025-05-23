@@ -1,74 +1,49 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# AI Co-Pilot Enhanced - Ankit Assignment BeyondChats
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an AI-powered customer support assistant designed to enhance the experience of support agents. It acts as a **Co-Pilot** that helps answer queries related to refunds, shipping, account issues, product info, returns, and technical support. It allows agents to interact naturally with an AI bot that pulls information from public articles and previous conversations to generate high-quality responses.
 
-## Available Scripts
+## 🔗 Live Site
 
-In the project directory, you can run:
+👉 [Click here to view the deployed project](https://ankit-assignment-beyondchats.netlify.app/)
 
-### `npm start`
+## 📁 GitHub Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+👉 [Click here to view the source code](https://github.com/ankitSharma645/ankitassignmentbeyondchats)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## ✨ Features
 
-### `npm test`
+- ✅ Ask natural questions like “How do I get a refund?” to your AI Co-Pilot.
+- ✅ AI scans and pulls **15+ relevant sources** from articles, help docs, and previous conversations.
+- ✅ Each answer includes **clickable source links**.
+  - Click on a source link to **preview the full source content in a popup modal**.
+- ✅ AI-generated responses are shown in a conversational chat interface.
+- ✅ Add any AI answer to a **Composer** for editing or rephrasing.
+- ✅ Composer features include:
+  - Change tone (friendly, formal, etc.)
+  - Fix grammar, spelling, and clarity
+- ✅ Send follow-up questions with improved content from the Composer.
+- ✅ Add responses to **Notes** and manage them (edit, delete, copy).
+- ✅ View all chats and pinned content in the **Sidebar**.
+- ✅ Pin, copy, or listen to AI-generated answers using **text-to-speech**.
+- ✅ Customize AI personality based on your preference.
+- ✅ Organize your chat with edit/delete and **rename conversation titles**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 🛠️ Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React.js
+- JavaScript (ES6+)
+- HTML & CSS
+- Tailwind CSS (or your preferred styling system)
+- Netlify (for deployment)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 Getting Started
 
-### `npm run eject`
+To run the project locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# ankitassignmentbeyondchats
->>>>>>> 9b65a99e2d59fe1cccdbe697721aef13e1d7e1b8
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ankitSharma645/ankitassignmentbeyondchats.git
